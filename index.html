@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your next favorite dinner. Explore 19 recipes with ingredients, step-by-step instructions, nutrition, and chef's tips.">
+  <meta name="theme-color" content="#ff6900">
+  <title>What's For Dinner</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/recipes.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to recipe</a>
+  <header id="header" class="site-header">
+    <div class="container header-container">
+      <div class="header-row">
+        <div class="brand">
+          <div class="brand-mark"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+          <div>
+            <h1>What's For Dinner</h1>
+            <p>Your daily meal inspiration</p>
+          </div>
+        </div>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <button class="nav-button" data-action="saved" aria-label="Saved recipes" title="Saved Recipes"><i class="fa-solid fa-bookmark" aria-hidden="true"></i></button>
+          <button class="nav-button" data-action="recent" aria-label="Recent recipes" title="Recent"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></button>
+          <button class="nav-button" data-action="settings" aria-label="Settings" title="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i></button>
+          <button class="profile-button" data-action="profile" aria-label="Profile"><img src="images/profile.jpg" alt="" width="40" height="40"></button>
+        </nav>
+        <button id="mobile-menu-btn" class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      </div>
+      <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <button data-action="saved"><i class="fa-solid fa-bookmark" aria-hidden="true"></i><span>Saved Recipes</span></button>
+        <button data-action="recent"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Recent</span></button>
+        <button data-action="settings"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>Settings</span></button>
+        <button data-action="profile"><img src="images/profile.jpg" alt="" width="32" height="32"><span>Profile</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section id="recipe-display-section" class="recipe-card" aria-labelledby="recipe-name">
+      <div class="recipe-grid">
+        <div class="recipe-visual">
+          <img id="recipe-image" class="recipe-photo" src="images/creamy-spaghetti-carbonara.avif" alt="Creamy Spaghetti Carbonara" fetchpriority="high" width="800" height="1200">
+          <div class="rating-badge"><i class="fa-solid fa-star" aria-hidden="true"></i><span id="rating-average">4.8</span><span id="rating-quantity">(234 reviews)</span></div>
+          <div class="recipe-metrics">
+            <div class="metrics-grid">
+              <div><i class="fa-solid fa-clock metric-prep" aria-hidden="true"></i><p>Prep Time</p><strong id="prep-time-display">15 min</strong></div>
+              <div><i class="fa-solid fa-fire-burner metric-cook" aria-hidden="true"></i><p>Cook Time</p><strong id="cook-time-display">20 min</strong></div>
+              <div><i class="fa-solid fa-users metric-servings" aria-hidden="true"></i><p>Servings</p><strong id="servings-display">4 people</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recipe-details">
+          <div class="recipe-heading">
+            <div class="recipe-copy">
+              <div class="recipe-badges"><span id="difficulty-badge" class="badge badge-difficulty">Easy</span><span id="category-badge" class="badge badge-category">Italian</span></div>
+              <h2 id="recipe-name">Creamy Spaghetti Carbonara</h2>
+              <p id="recipe-description">A classic Italian pasta dish with eggs, cheese, and pancetta</p>
+            </div>
+            <div class="recipe-actions">
+              <button id="save-recipe-btn" class="action-button" aria-label="Save recipe" aria-pressed="false" title="Save recipe"><i class="fa-solid fa-bookmark" aria-hidden="true"></i></button>
+              <button id="share-recipe-btn" class="action-button" aria-label="Share recipe" title="Share recipe"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div id="time-warning" class="time-warning" hidden><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><div><p class="warning-title">Extended Preparation Time</p><p class="warning-description">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p></div></div>
+          <div class="tabs-wrap">
+            <div class="recipe-tabs" role="tablist" aria-label="Recipe details">
+              <button id="ingredients-trigger" class="tab-button" data-tab="ingredients" role="tab" aria-selected="true" aria-controls="ingredients-tab" title="Ingredients"><i class="fa-solid fa-list-check" aria-hidden="true"></i><span>Ingredients</span></button>
+              <button id="instructions-trigger" class="tab-button" data-tab="instructions" role="tab" aria-selected="false" aria-controls="instructions-tab" tabindex="-1" title="Instructions"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Instructions</span></button>
+              <button id="nutrition-trigger" class="tab-button" data-tab="nutrition" role="tab" aria-selected="false" aria-controls="nutrition-tab" tabindex="-1" title="Nutrition"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i><span>Nutrition</span></button>
+              <button id="tips-trigger" class="tab-button" data-tab="tips" role="tab" aria-selected="false" aria-controls="tips-tab" tabindex="-1" title="Chef's Tips"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Chef's Tips</span></button>
+            </div>
+          </div>
+          <div id="ingredients-tab" class="tab-content" role="tabpanel" aria-labelledby="ingredients-trigger" tabindex="0"><div class="ingredients-panel"><ol id="ingredients-list" class="ingredients-list"></ol></div></div>
+          <div id="instructions-tab" class="tab-content" role="tabpanel" aria-labelledby="instructions-trigger" tabindex="0" hidden><ol id="instructions-list" class="instructions-list"></ol></div>
+          <div id="nutrition-tab" class="tab-content" role="tabpanel" aria-labelledby="nutrition-trigger" tabindex="0" hidden><dl id="nutrition-list" class="nutrition-grid"></dl></div>
+          <div id="tips-tab" class="tab-content" role="tabpanel" aria-labelledby="tips-trigger" tabindex="0" hidden><ul id="tips-list" class="tips-list"></ul></div>
+          <div class="recipe-footer"><button id="try-another-btn" class="primary-button"><i class="fa-solid fa-rotate" aria-hidden="true"></i>Try Another Recipe</button></div>
+        </div>
+      </div>
+    </section>
+    <noscript><p class="noscript-message">Please enable JavaScript to explore recipes and choose a random dinner.</p></noscript>
+  </main>
+  <div id="status-message" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="utility-dialog" class="utility-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title"></h2><button id="close-dialog" class="action-button" aria-label="Close dialog"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div><div id="dialog-content"></div></dialog>
+</body>
+</html>

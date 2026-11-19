@@ -1,0 +1,4 @@
+/* The reference requests Poppins but actually renders this system font stack. */
+:root {
+  --font-primary: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
